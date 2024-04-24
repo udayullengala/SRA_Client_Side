@@ -117,11 +117,11 @@ const AddAnnexure = () => {
                         </Col>
                         <Col md="4" className="mb-3">
                             <label>Annexure Number</label>
-                            <input className='form-control' name='annexure_number' onChange={(e) => updateData(e)} />
+                            <input className='form-control' value={data?.annexure_number} name='annexure_number' onChange={(e) => updateData(e)} />
                         </Col>
                         <Col md="4" className="mb-3">
                             <label>Name</label>
-                            <input className='form-control' name='name' onChange={(e) => updateData(e)} />
+                            <input className='form-control' value={data?.name} name='name' onChange={(e) => updateData(e)} />
                         </Col>
                         <Col md="4" className="mb-3">
                             <label>User Type</label>
@@ -132,7 +132,6 @@ const AddAnnexure = () => {
                                 name="user_type"
                                 onChange={(value, actionMeta) => handleChange(value, actionMeta)}
                             />
-                            {/* <input className='form-control' name='user_type' onChange={(e) => updateData(e)} /> */}
                         </Col>
                         <Col md="4" className="mb-3">
                             <label>Type</label>
@@ -142,7 +141,6 @@ const AddAnnexure = () => {
                                 name='type'
                                 onChange={(value, actionMeta) => handleChange(value, actionMeta)}
                             />
-                            {/* <input className='form-control' name='type' onChange={(e) => updateData(e)} /> */}
                         </Col>
                         <Col md="4" className="mb-3">
                             <label>Status</label>
@@ -152,40 +150,7 @@ const AddAnnexure = () => {
                                 name='status'
                                 onChange={(value, actionMeta) => handleChange(value, actionMeta)}
                             />
-                            {/* <input className='form-control' name='status' onChange={(e) => updateData(e)} /> */}
                         </Col>
-                        {/* <Col md="4" className="mb-3">
-                            <label>Aadhar No.</label>
-                            <input className='form-control' name='aadhar_number' onChange={(e) => updateData(e)} />
-                        </Col>
-                        <Col md="4" className="mb-3">
-                            <label>PanCard No.</label>
-                            <input className='form-control' name='pan_number' onChange={(e) => updateData(e)} />
-                        </Col>
-                        <Col md="4" className="mb-3">
-                            <label>New Voter ID</label>
-                            <input className='form-control' name='new_voter_id' onChange={(e) => updateData(e)} />
-                        </Col>
-                        <Col md="4" className="mb-3">
-                            <label>Old Voter ID</label>
-                            <input className='form-control' name='old_voter_id' onChange={(e) => updateData(e)} />
-                        </Col>
-                        <Col md="4" className="mb-3">
-                            <label>New Electricity Bill</label>
-                            <input className='form-control' name='new_electricity_bill' onChange={(e) => updateData(e)} />
-                        </Col>
-                        <Col md="4" className="mb-3">
-                            <label>Old Electricity Bill</label>
-                            <input className='form-control' name='old_electricity_bill' onChange={(e) => updateData(e)} />
-                        </Col>
-                        <Col md="4" className="mb-3">
-                            <label>New Gumasta</label>
-                            <input className='form-control' name='new_gumasta' onChange={(e) => updateData(e)} />
-                        </Col>
-                        <Col md="4" className="mb-3">
-                            <label>Old Gumasta</label>
-                            <input className='form-control' name='old_gumasta' onChange={(e) => updateData(e)} />
-                        </Col> */}
 
                         <Col md="12">
                             <div className='d-flex justify-content-end align-items-center'>

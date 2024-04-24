@@ -16,7 +16,7 @@ const Projects = () => {
   });
   const [tableData, setTableData] = useState([]);
   const [isApiLoader, setIsApiLoader] = useState(false);
-
+  
   const updateData = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };

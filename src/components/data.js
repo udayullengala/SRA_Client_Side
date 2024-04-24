@@ -40,8 +40,8 @@ export const navbarList = [
     icon: <GoProjectSymlink size={20} />
   },
   {
-    navLink: "/suplimentary/",
-    name: "Suplimentary",
+    navLink: "/supplimentary/",
+    name: "Supplimentary",
     icon: <GoProjectSymlink size={20} />
   }
 ]

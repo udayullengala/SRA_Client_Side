@@ -1,17 +1,18 @@
 import { lazy } from 'react'
-import Suplimentary from '../views/Suplimentary'
+import Supplimentary from '../views/Supplimentary'
+import Home from '../views/Home'
 const EmployeeLogin = lazy(() => import('@views/EmployeeLogin'))
 const SignUpPage = lazy(() => import('@views/SignUpPage'))
 const Dashboard = lazy(() => import('@views/Dashboard'))
 const Projects = lazy(() => import('@views/Projects'))
 const Annexure = lazy(() => import('@views/Annexure'))
 const AddAnnexure = lazy(() => import('@views/AddAnnexure'))
-const AddSuplimentary = lazy(() => import('@views/AddSuplimentary'))
+const AddSupplimentary = lazy(() => import('@views/AddSupplimentary'))
 
 export const FrontBaseRoutes = [
     {
         path: '/',
-        element: <></>,
+        element: <Home />,
         meta: {
             layout: 'blank'
         }
@@ -59,15 +60,15 @@ export const FrontBaseRoutes = [
         }
     },
     {
-        path: '/suplimentary/',
-        element: <Suplimentary />,
+        path: '/supplimentary/',
+        element: <Supplimentary />,
         meta: {
             layout: 'main'
         }
     },
     {
-        path: '/add_suplimentary/',
-        element: <AddSuplimentary />,
+        path: '/add_supplimentary/',
+        element: <AddSupplimentary />,
         meta: {
             layout: 'main'
         }
