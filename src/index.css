@@ -20,3 +20,12 @@ code {
 .dropdown-menu.show {
   transform: translate(-180px, -50px) !important;
 }
+
+.custom_class {
+  position: fixed !important;
+  z-index: 10000000 !important;
+  top: 200px !important;
+  right: 0px !important;
+  width: 200px !important;
+  inset: unset !important;
+}

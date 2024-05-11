@@ -6,6 +6,12 @@ import { get, post } from "../utils";
 import DataTableComponent from "../components/DataTable";
 import ApiLoader from "../components/ApiLoader";
 import { toast } from "react-toastify";
+import {
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from 'reactstrap';
 import moment from "moment";
 
 const Projects = () => {
@@ -14,14 +20,19 @@ const Projects = () => {
     project_name: "",
     location: "",
   });
-  const [tableData, setTableData] = useState([]);
+  const [updatedObject, setUpdatedObject] = useState({})
+
+  const [tableData, setTableData] = useState([{}, {}, {},{}, {}, {},{}, {}, {},{}, {}, {},{}, {}, {}]);
   const [isApiLoader, setIsApiLoader] = useState(false);
   
   const updateData = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
+  console.log(updatedObject)
+
   const getData = () => {
+    return
     get("/core_admin/api/v1/project/")
       .then((resp) => {
         console.log(resp);
@@ -52,31 +63,48 @@ const Projects = () => {
       });
   };
 
-  const searchKey = ["project_name", "location"]
+  // const updatedObject = {}
+
+  // const searchKey = ["project_name", "location"]
 
   const columns = [
     {
-      name: "Name",
+      name: <div className="d-flex justify-content-center flex-column align-items-cemter p-1">
+        <p className="py-1">Name</p>
+        <input className="form-control" value={updatedObject?.name} onChange={(e) => setUpdatedObject({...updatedObject, 'name': e.target.value})} />
+      </div>,
       selector: (row) => row.project_name,
+      searchKey: "project_name"
     },
     {
       name: "Location",
       selector: (row) => row.location,
+      searchKey: "location"
     },
     {
       name: "Created at",
       selector: (row) => moment(row.created_at).format("MMMM Do YYYY"),
+      searchKey: "created_at"
     },
-    // {
-    //   name: "Action",
-    //   cell: (row) => {
-    //     return (
-    //       <>
-    //         <Link to={`/add_annexure/?project_id=${row.id}`} className="btn btn-sm btn-primary">Add Annexure</Link>
-    //       </>
-    //     )
-    //   },
-    // },
+    {
+      name: "Action",
+      cell: (row) => {
+        return (
+          <>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown button
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </div>
+          </>
+        )
+      },
+    },
   ];
 
   useEffect(() => {
@@ -104,7 +132,10 @@ const Projects = () => {
                 </div>
               </div>
             </div>
-            <DataTableComponent columns={columns} data={tableData} searchKey={searchKey} />
+            <div>
+            <DataTableComponent style={{height: '100px'}} updatedObject={updatedObject} columns={columns} data={tableData} />
+
+            </div>
           </div>
         </div>
       </div>

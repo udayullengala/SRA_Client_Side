@@ -11,13 +11,13 @@ const MainLayout = ({children}) => {
   const navigate = useNavigate()
 
   const checkLogin = async () => {
-    const token = await getToken()
-    if (token == null || !token) {
-      console.log(typeof(token), "token")
-      navigate('/emp-login/')
-      toast.error("Session expired")
-      // return <Navigate to={"/emp-login/"} replace={true} />
-    }
+    // const token = await getToken()
+    // if (token == null || !token) {
+    //   console.log(typeof(token), "token")
+    //   navigate('/emp-login/')
+    //   toast.error("Session expired")
+    //   // return <Navigate to={"/emp-login/"} replace={true} />
+    // }
   }
 
   useEffect(() => {
