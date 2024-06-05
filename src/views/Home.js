@@ -30,7 +30,7 @@ const Home = () => {
             </style>
             <div className="container my-3">
                 <div className="row">
-                    <div className="col-8">
+                    <div className="col-md-8">
                         <div className="player-card-parent" style={{display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '16px'}}>
                             {
                                 Array.apply(null, Array(10)).map((cur, index) => {
@@ -49,7 +49,7 @@ const Home = () => {
                             }
                         </div>
                     </div>
-                    <div className="col-4">
+                    <div className="col-md-4">
                         <div className="list-of-users" style={{width: '90%', height: '500px', border: '1px solid #ccc', borderRadius: '7px', position: 'relative'}}>
                             <div className="heading" style={{borderBottom: '1px solid #ccc', position: 'sticky', left: '0px', top: '0px', background: '#fff', padding: '15px 15px 0px'}}>
                                 <h6>Online Friends: 0/69</h6>
